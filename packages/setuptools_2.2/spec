@@ -1,0 +1,8 @@
+---
+name: setuptools_2.2
+
+dependencies:
+- python_2.7.6
+
+files:
+- setuptools_2.2/setuptools-2.2.tar.gz

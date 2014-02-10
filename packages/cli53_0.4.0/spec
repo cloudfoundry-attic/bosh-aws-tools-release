@@ -1,0 +1,8 @@
+---
+name: cli53_0.4.0
+
+dependencies:
+- pip_1.5.2
+
+files:
+- cli53_0.4.0/**/*

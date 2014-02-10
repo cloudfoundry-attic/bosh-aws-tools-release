@@ -1,0 +1,31 @@
+#!/bin/bash
+
+JOB_NAME=route53_backup
+
+RUN_DIR=/var/vcap/sys/run/$JOB_NAME
+LOG_DIR=/var/vcap/sys/log/$JOB_NAME
+PIDFILE=$RUN_DIR/$JOB_NAME.pid
+
+case $1 in
+
+  start)
+    mkdir -p $RUN_DIR $LOG_DIR
+    chown -R vcap:vcap $RUN_DIR $LOG_DIR
+
+    # Tell monit that everything is ok for a long time
+    echo 1 >> $PIDFILE
+
+    # For now run backup job when monit starts the job
+	/var/vcap/jobs/$JOB_NAME/bin/backup \
+	  1>> $LOG_DIR/$JOB_NAME.stdout.log \
+	  2>> $LOG_DIR/$JOB_NAME.stderr.log
+
+    ;;
+
+  stop)
+    rm -f $PIDFILE
+    ;;
+
+  *)
+  echo "Usage: ctl {start|stop}" ;;
+esac

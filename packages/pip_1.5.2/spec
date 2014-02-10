@@ -1,0 +1,9 @@
+---
+name: pip_1.5.2
+
+dependencies:
+- python_2.7.6
+- setuptools_2.2
+
+files:
+- pip_1.5.2/pip-1.5.2.tar.gz

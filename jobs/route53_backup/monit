@@ -1,0 +1,5 @@
+check process route53_backup
+  with pidfile /var/vcap/sys/run/route53_backup/route53_backup.pid
+  start program "/var/vcap/jobs/route53_backup/bin/ctl start"
+  stop program "/var/vcap/jobs/route53_backup/bin/ctl stop"
+  group vcap

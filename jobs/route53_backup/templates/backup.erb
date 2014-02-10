@@ -1,0 +1,55 @@
+#!/bin/bash
+
+set -e -x
+
+JOB_NAME=route53_backup
+
+function redirect_output {
+  log_dir=$1
+  prefix=$2
+
+  mkdir -p $log_dir
+  chown -R vcap:vcap $log_dir
+
+  exec 1>> $log_dir/$prefix.stdout.log
+  exec 2>> $log_dir/$prefix.stderr.log
+}
+
+function prepare_store_dir {
+  store_dir=$1
+
+  mkdir -p $store_dir
+  chown -R vcap:vcap $store_dir
+}
+
+function export_all_zones_to_store_dir {
+  cli53_dir=$1
+  store_dir=$2
+
+  # cli53's boto lib requires aws env variables
+  export AWS_ACCESS_KEY_ID="<%= p("route53_backup.aws_access_key_id") %>"
+  export AWS_SECRET_ACCESS_KEY="<%= p("route53_backup.aws_secret_access_key") %>"
+
+  # Configure Python env to be able to run cli53 with its dependencies
+  cli53_exe=$cli53_dir/bin/cli53
+  export PYTHONPATH=$cli53_dir/lib/python2.7/site-packages/:$PYTHONPATH
+
+  date=$(date -u +"%Y-%m-%d-%H-%M-%SZ")
+
+  echo "Getting list of Route53 zones..."
+  zones=$($cli53_exe list 2>&1 | grep ' Name: ' | cut -d: -f2 | sed "s/ //g")
+
+  for zone in $zones ; do
+    echo "Exporting Route53 zone $zone..."
+    $cli53_exe export $zone > $store_dir/$zone${date}
+  done
+}
+
+log_dir=/var/vcap/sys/log/$JOB_NAME
+redirect_output $log_dir $JOB_NAME
+
+store_dir=/var/vcap/store/$JOB_NAME
+prepare_store_dir $store_dir
+
+cli53_dir=/var/vcap/packages/cli53_0.4.0
+export_all_zones_to_store_dir $cli53_dir $store_dir

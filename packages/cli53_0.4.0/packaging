@@ -1,0 +1,14 @@
+set -e -x
+
+echo "Setting the PYTHONPATH with setuptools and pip site packages..."
+export PYTHONPATH=/var/vcap/packages/setuptools_2.2/lib/python2.7/site-packages:$PYTHONPATH
+export PYTHONPATH=/var/vcap/packages/pip_1.5.2/lib/python2.7/site-packages:$PYTHONPATH
+
+echo "Installing cli53..."
+/var/vcap/packages/pip_1.5.2/bin/pip install \
+  -I \
+  --no-index \
+  --find-links=file://$BOSH_COMPILE_TARGET/deps \
+  --no-allow-external  \
+  --install-option="--prefix=$BOSH_INSTALL_TARGET" \
+  cli53

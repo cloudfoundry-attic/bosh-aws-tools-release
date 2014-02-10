@@ -1,0 +1,7 @@
+---
+name: python_2.7.6
+
+dependencies: []
+
+files:
+- python_2.7.6/Python-2.7.6.tgz

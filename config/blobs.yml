@@ -1,0 +1,16 @@
+---
+pip_1.5.2/pip-1.5.2.tar.gz:
+  object_id: a14de711-bd17-45a3-9041-736c7fbafc43
+  sha: !binary |-
+    NGY0M2E2YjA0ZjgzYjhkODNiZWU3MDI3NTBmZjM1YmUyYTJiNmFmMQ==
+  size: 1079904
+python_2.7.6/Python-2.7.6.tgz:
+  object_id: ea423c58-ffdc-4637-96e6-1e571e90e891
+  sha: !binary |-
+    ODMyOGQ5ZjFkNTU1NzRhMjg3ZGYzODRmNDkzMWEzOTQyZjAzZGE2NA==
+  size: 14725931
+setuptools_2.2/setuptools-2.2.tar.gz:
+  object_id: 75a9a312-6159-4c85-9837-990505b06ad0
+  sha: !binary |-
+    NTQ3ZWZmMTFlYTQ2NjEzZThhOWJhNWIxMmE4OWMxMDEwZWNjNGU1MQ==
+  size: 786831

@@ -1,0 +1,18 @@
+---
+name: route53_backup
+
+description: "Backs up all Route53 zones to persistent disk"
+
+templates:
+  ctl: bin/ctl
+  backup.erb: bin/backup
+
+packages:
+- cli53_0.4.0
+- python_2.7.6
+
+properties:
+  route53_backup.aws_access_key_id:
+    description: "AWS Access Key Id used to make API calls to Route53"
+  route53_backup.aws_secret_access_key:
+    description: "AWS Secret Access Key used to make API calls to Route53"
