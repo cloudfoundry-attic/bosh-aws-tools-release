@@ -19,9 +19,9 @@ case $1 in
     (crontab -l | sed /$JOB_NAME/d; cat /var/vcap/jobs/$JOB_NAME/config/backup.cron) | sed /^$/d | crontab
 
     # For now run backup job when monit starts the job
-	/var/vcap/jobs/$JOB_NAME/bin/backup \
-	  1>> $LOG_DIR/$JOB_NAME.stdout.log \
-	  2>> $LOG_DIR/$JOB_NAME.stderr.log
+    /var/vcap/jobs/$JOB_NAME/bin/backup \
+      1>> $LOG_DIR/$JOB_NAME.stdout.log \
+      2>> $LOG_DIR/$JOB_NAME.stderr.log
 
     ;;
 
