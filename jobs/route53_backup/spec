@@ -6,6 +6,7 @@ description: "Backs up all Route53 zones to persistent disk"
 templates:
   ctl: bin/ctl
   backup.erb: bin/backup
+  backup.cron.erb: config/backup.cron
 
 packages:
 - cli53_0.4.0
@@ -16,3 +17,7 @@ properties:
     description: "AWS Access Key Id used to make API calls to Route53"
   route53_backup.aws_secret_access_key:
     description: "AWS Secret Access Key used to make API calls to Route53"
+
+  route53_backup.schedule:
+    description: "Schedule for the backup (in cron format)"
+    default: "0 0 * * *"
