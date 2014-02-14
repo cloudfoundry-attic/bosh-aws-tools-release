@@ -13,8 +13,11 @@ See [Go][go] for instructions on installing `go`.
 ### Configuration
 
 Before running the tests, you must make sure you've targetted the desired Director
+and can create a dev release:
+
 ```
 bosh target <host>
+bosh create release
 ```
 
 You must also set `$CONFIG` to point to a `.json` file which contains the

@@ -1,5 +1,0 @@
-set -e -x
-
-mkdir -p $BUILD_DIR/deps
-
-pip install --download=$BUILD_DIR/deps cli53

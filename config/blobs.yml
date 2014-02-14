@@ -14,3 +14,8 @@ setuptools_2.2/setuptools-2.2.tar.gz:
   sha: !binary |-
     NTQ3ZWZmMTFlYTQ2NjEzZThhOWJhNWIxMmE4OWMxMDEwZWNjNGU1MQ==
   size: 786831
+cli53_0.4.0/deps.tar.gz:
+  object_id: 5469a54f-738d-4cd7-a210-83f3c4caa7b5
+  sha: !binary |-
+    MGM3NTFlZmY5ZWM2YmYxMDVlYjk4MmQ5N2RjMzViZDk2NzIxMTFlMA==
+  size: 6523694
