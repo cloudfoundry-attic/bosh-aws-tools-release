@@ -12,23 +12,18 @@ case $1 in
     mkdir -p $RUN_DIR $LOG_DIR
     chown -R vcap:vcap $RUN_DIR $LOG_DIR
 
-    # Tell monit that everything is ok for a long time
-    echo 1 >> $PIDFILE
-
     # Add backup.cron cron line as last entry in crontab
     (crontab -l | sed /$JOB_NAME/d; cat /var/vcap/jobs/$JOB_NAME/config/backup.cron) | sed /^$/d | crontab
 
-    # For now run backup job when monit starts the job
-    /var/vcap/jobs/$JOB_NAME/bin/backup \
-      1>> $LOG_DIR/$JOB_NAME.stdout.log \
-      2>> $LOG_DIR/$JOB_NAME.stderr.log
+    # Tell monit that everything is ok for a long time
+    echo 1 >> $PIDFILE
 
     ;;
 
   stop)
-    rm -f $PIDFILE
-
     crontab -l | sed /$JOB_NAME/d | sed /^$/d | crontab
+
+    rm -f $PIDFILE
 
     ;;
 
