@@ -29,8 +29,9 @@ var _ = Describe("route53_backup job", func() {
 		DirectorUUID: Config.DirectorUUID,
 		DirectorHost: Config.DirectorHost,
 
-		DeploymentName: "route53_backup",
-		JobName:        "route53_backup",
+		// Use test in names to make sure we do not delete real deployments
+		DeploymentName: "test_route53_backup",
+		JobName:        "test_route53_backup",
 
 		AwsAccessId:         Config.AwsAccessId,
 		AwsSecretAcccessKey: Config.AwsSecretAcccessKey,
