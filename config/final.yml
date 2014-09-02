@@ -3,4 +3,4 @@ final_name: bosh-aws-tools
 blobstore:
   provider: s3
   options:
-    bucket_name: bosh-aws-tools-blobs
+    bucket_name: cloudops-aws-tools-release

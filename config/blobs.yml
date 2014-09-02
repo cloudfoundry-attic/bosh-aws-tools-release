@@ -1,21 +1,21 @@
 ---
+cli53_0.4.0/deps.tar.gz:
+  object_id: 6aa6384b-dab6-41d0-be1b-40f3ef53e837
+  sha: !binary |-
+    MGM3NTFlZmY5ZWM2YmYxMDVlYjk4MmQ5N2RjMzViZDk2NzIxMTFlMA==
+  size: 6523694
 pip_1.5.2/pip-1.5.2.tar.gz:
-  object_id: a14de711-bd17-45a3-9041-736c7fbafc43
+  object_id: f54d4c09-8351-4dcc-8e12-de85738caf42
   sha: !binary |-
     NGY0M2E2YjA0ZjgzYjhkODNiZWU3MDI3NTBmZjM1YmUyYTJiNmFmMQ==
   size: 1079904
 python_2.7.6/Python-2.7.6.tgz:
-  object_id: ea423c58-ffdc-4637-96e6-1e571e90e891
+  object_id: 29c28c4b-af66-436b-af7e-35aa103bf3c7
   sha: !binary |-
     ODMyOGQ5ZjFkNTU1NzRhMjg3ZGYzODRmNDkzMWEzOTQyZjAzZGE2NA==
   size: 14725931
 setuptools_2.2/setuptools-2.2.tar.gz:
-  object_id: 75a9a312-6159-4c85-9837-990505b06ad0
+  object_id: 754dbea0-fa96-4257-ad94-1da0f12116c5
   sha: !binary |-
     NTQ3ZWZmMTFlYTQ2NjEzZThhOWJhNWIxMmE4OWMxMDEwZWNjNGU1MQ==
   size: 786831
-cli53_0.4.0/deps.tar.gz:
-  object_id: 5469a54f-738d-4cd7-a210-83f3c4caa7b5
-  sha: !binary |-
-    MGM3NTFlZmY5ZWM2YmYxMDVlYjk4MmQ5N2RjMzViZDk2NzIxMTFlMA==
-  size: 6523694
