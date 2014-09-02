@@ -1,0 +1,50 @@
+---
+packages:
+- name: cli53_0.4.0
+  version: !binary |-
+    MTU3MGM0ODNjNzIxNmU0OTM0ZTY4ZGFkMjU5Yzc5YzE2YzdmNDFmYg==
+  sha1: !binary |-
+    YzgzZTYyYjQ2OGJlNDk2OTQwNjAwYWQzZjY1MmJjYWFiOGE5MjM4Zg==
+  fingerprint: !binary |-
+    MTU3MGM0ODNjNzIxNmU0OTM0ZTY4ZGFkMjU5Yzc5YzE2YzdmNDFmYg==
+  dependencies:
+  - pip_1.5.2
+- name: pip_1.5.2
+  version: !binary |-
+    YWUxYzRlZDk1ODEwMzYzNmFlNjY5ZDMzNTdkYWMzYzdiMGNkZWQ4Mg==
+  sha1: !binary |-
+    NjIxNTY4ZWFkOWY2NmVhY2JjZjYwZDkxOGI5OTcwNjcxOTI4YmRkMQ==
+  fingerprint: !binary |-
+    YWUxYzRlZDk1ODEwMzYzNmFlNjY5ZDMzNTdkYWMzYzdiMGNkZWQ4Mg==
+  dependencies:
+  - python_2.7.6
+  - setuptools_2.2
+- name: python_2.7.6
+  version: !binary |-
+    OGY4Y2RjMzk0MTRhMzlkMjE4OWVkZDkyYjQyZjZkYTc1YTg0YjE3MQ==
+  sha1: !binary |-
+    M2I2MmZlMzdhMDk2OWRhOGVhNTIwMGRjN2M1OGZkOGQ3OGNmYWJkOA==
+  fingerprint: !binary |-
+    OGY4Y2RjMzk0MTRhMzlkMjE4OWVkZDkyYjQyZjZkYTc1YTg0YjE3MQ==
+  dependencies: []
+- name: setuptools_2.2
+  version: !binary |-
+    M2Q1NDZhYTczMDAxN2NkYzYxNDE2MWZmNjdhZTcxYTM4MTU4M2ZjZg==
+  sha1: !binary |-
+    Y2Q3OWRmYWI1N2I5ZDMxYTg1MmJlODA4NWE4Mzg5YjExNmY1Y2I2ZA==
+  fingerprint: !binary |-
+    M2Q1NDZhYTczMDAxN2NkYzYxNDE2MWZmNjdhZTcxYTM4MTU4M2ZjZg==
+  dependencies:
+  - python_2.7.6
+jobs:
+- name: route53_backup
+  version: !binary |-
+    Y2M3MTk3YWU3MTU4ZWVjOGVlMGJlOGJhYTVmMDc2MjZmNmQ2MzhkMQ==
+  fingerprint: !binary |-
+    Y2M3MTk3YWU3MTU4ZWVjOGVlMGJlOGJhYTVmMDc2MjZmNmQ2MzhkMQ==
+  sha1: !binary |-
+    NzE4NWFkYTczYTI5MDdmYWE4ZmZmYjBiNTc1YjllZjc1NWMwMDA1Zg==
+commit_hash: bb007229
+uncommitted_changes: true
+name: bosh-aws-tools
+version: '1'
