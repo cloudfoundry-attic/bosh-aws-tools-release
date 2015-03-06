@@ -3,6 +3,8 @@ name: cli53_0.4.0
 
 dependencies:
 - pip_1.5.2
+- setuptools_2.2
+- python_2.7.6
 
 files:
 - cli53_0.4.0/**/*
