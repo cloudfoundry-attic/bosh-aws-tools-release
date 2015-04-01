@@ -30,4 +30,6 @@ builds:
     version: '14'
   86572054-c495-400a-b889-d4e0fee463d6:
     version: '15'
+  816b809a-3a1c-4c0e-a9bc-3b2e3ab3e187:
+    version: '16'
 format-version: '2'
