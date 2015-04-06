@@ -1,0 +1,41 @@
+---
+packages:
+- name: setuptools_2.2
+  version: 3d546aa730017cdc614161ff67ae71a381583fcf
+  fingerprint: 3d546aa730017cdc614161ff67ae71a381583fcf
+  sha1: cd79dfab57b9d31a852be8085a8389b116f5cb6d
+  dependencies:
+  - python_2.7.6
+- name: pip_1.5.2
+  version: ae1c4ed958103636ae669d3357dac3c7b0cded82
+  fingerprint: ae1c4ed958103636ae669d3357dac3c7b0cded82
+  sha1: 621568ead9f66eacbcf60d918b9970671928bdd1
+  dependencies:
+  - python_2.7.6
+  - setuptools_2.2
+- name: cli53_0.4.0
+  version: 13c239a1d9f8a8e16e373f0b04758ebc4d407e2a
+  fingerprint: 13c239a1d9f8a8e16e373f0b04758ebc4d407e2a
+  sha1: 5cd93901c6c7465711239f6d76f8622407118e52
+  dependencies:
+  - pip_1.5.2
+  - python_2.7.6
+  - setuptools_2.2
+- name: python_2.7.6
+  version: 8f8cdc39414a39d2189edd92b42f6da75a84b171
+  fingerprint: 8f8cdc39414a39d2189edd92b42f6da75a84b171
+  sha1: 3b62fe37a0969da8ea5200dc7c58fd8d78cfabd8
+  dependencies: []
+jobs:
+- name: route53_backup
+  version: ab8f618fbb39e750950c02ea7db45609dc74f8e4
+  fingerprint: ab8f618fbb39e750950c02ea7db45609dc74f8e4
+  sha1: b4e98e19ca9f6360ab43f85b5ca81947143be0f4
+license:
+  version: 45ba225fe5790e0633fb9a8e20be9efeea888f51
+  fingerprint: 45ba225fe5790e0633fb9a8e20be9efeea888f51
+  sha1: fa760d16ce72cb8413354945082cbb205d009a64
+commit_hash: 9d0ea146
+uncommitted_changes: false
+name: bosh-aws-tools
+version: '18'
