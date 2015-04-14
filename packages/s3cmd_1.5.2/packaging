@@ -1,0 +1,21 @@
+set -e -x
+
+# To create deps.tar.gz use `mkdir deps/ && pip install --download=./deps s3cmd==1.5.2 && tar czvf deps.tar.gz deps/`
+# Creation of deps.tar.gz is not in pre_packaging 
+# because it forces users who create this release to have python installed.
+
+echo "Extracting s3cmd dependencies..."
+tar xzvf s3cmd_1.5.2/deps.tar.gz
+
+echo "Setting the PYTHONPATH with setuptools and pip site packages..."
+export PYTHONPATH=/var/vcap/packages/setuptools_2.2/lib/python2.7/site-packages:$PYTHONPATH
+export PYTHONPATH=/var/vcap/packages/pip_1.5.2/lib/python2.7/site-packages:$PYTHONPATH
+
+echo "Installing s3cmd..."
+/var/vcap/packages/pip_1.5.2/bin/pip install \
+  -I \
+  --no-index \
+  --find-links=file://`pwd`/deps \
+  --no-allow-external  \
+  --install-option="--prefix=$BOSH_INSTALL_TARGET" \
+  s3cmd

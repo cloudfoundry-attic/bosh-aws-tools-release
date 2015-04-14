@@ -10,6 +10,7 @@ templates:
 
 packages:
 - cli53_0.4.0
+- s3cmd_1.5.2
 - python_2.7.6
 
 properties:
@@ -17,7 +18,8 @@ properties:
     description: "AWS Access Key Id used to make API calls to Route53"
   route53_backup.aws_secret_access_key:
     description: "AWS Secret Access Key used to make API calls to Route53"
-
+  route53_backup.s3_bucket:
+    description: "AWS S3 bucket to store the DNS backups"
   route53_backup.schedule:
     description: "Schedule for the backup (in cron format)"
     default: "0 0 * * *"

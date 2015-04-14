@@ -22,9 +22,12 @@ function prepare_store_dir {
   chown -R vcap:vcap $store_dir
 }
 
-function export_all_zones_to_store_dir {
+function export_all_zones_to_store_dir_and_s3 {
   cli53_dir=$1
   store_dir=$2
+
+  s3cmd_dir=$3
+  s3_bucket=$4
 
   # cli53's boto lib requires aws env variables
   export AWS_ACCESS_KEY_ID="<%= p('route53_backup.aws_access_key_id') %>"
@@ -33,6 +36,10 @@ function export_all_zones_to_store_dir {
   # Configure Python env to be able to run cli53 with its dependencies
   cli53_exe=$cli53_dir/bin/cli53
   export PYTHONPATH=$cli53_dir/lib/python2.7/site-packages/:$PYTHONPATH
+
+  # Configure S3cmd 
+  $s3cmd_exe=$s3cmd_dir/bin/s3cmd
+  export PYTHONPATH=$s3cmd_dir/lib/python2.7/site-packages/:$PYTHONPATH
 
   date=$(date -u +"%Y-%m-%d-%H-%M-%SZ")
   echo "--- Running at ${date}..."
@@ -43,6 +50,7 @@ function export_all_zones_to_store_dir {
   for zone in $zones ; do
     echo "--- Exporting Route53 zone $zone..."
     $cli53_exe export $zone > $store_dir/$zone${date}
+    $s3cmd_exe put $store_dir/$zone${date} s3://$bucket_name/
   done
 }
 
@@ -52,5 +60,10 @@ redirect_output $log_dir $JOB_NAME
 store_dir=/var/vcap/store/$JOB_NAME
 prepare_store_dir $store_dir
 
+bucket_name=<%= p('route53_backup.s3_bucket') %>"
+
 cli53_dir=/var/vcap/packages/cli53_0.4.0
-export_all_zones_to_store_dir $cli53_dir $store_dir
+s3cmd_dir=/var/vcap/packages/s3cmd_1.5.2
+
+export_all_zones_to_store_dir_and_s3 $cli53_dir $store_dir $s3cmd_dir $bucket_name
+

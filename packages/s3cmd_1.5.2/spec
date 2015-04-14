@@ -1,0 +1,10 @@
+---
+name: s3cmd_1.5.2
+
+dependencies:
+- pip_1.5.2
+- setuptools_2.2
+- python_2.7.6
+
+files:
+- s3cmd_1.5.2/**/*
