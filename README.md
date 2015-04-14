@@ -42,7 +42,7 @@ export CONFIG=$PWD/config.json
 ./bin/test [ginkgo arguments ...]
 ```
 
-The `test` script will pass any given arguments to `ginkgo`, so this is where
+The `test` script will pass any given arguments to [ginkgo](https://github.com/onsi/ginkgo), so this is where
 you pass `-focus=`, `-nodes=`, etc.
 
 #### Running in parallel
